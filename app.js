@@ -4,9 +4,9 @@ const bodyParser = require('body-parser');
 
 const app = express();
 const PORT = 3000;
-
+require('dotenv').config()
 // Connect to MongoDB
-mongoose.connect('mongodb+srv://nolostra:nolostra1400.@sjinnovationtest.qkz5wq5.mongodb.net/TestDB');
+mongoose.connect(`${process.env.MongoDB}`);
 
 // Define user schema
 const userSchema = new mongoose.Schema({
